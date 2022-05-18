@@ -27,6 +27,7 @@ public class Memo extends Timestamped {
 //    private int view;
 //    @Column(nullable = false)
 //    private Long user_id;
+
     public Memo(MemoRequestDto requestDto) {
         this.username = requestDto.getUsername();
         this.title = requestDto.getTitle();
