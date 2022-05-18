@@ -19,6 +19,13 @@ public class MemoController {
     public List<Memo> displayMemo() {
         return memoRepository.findAll();
     }
+    @GetMapping("/memos/{id}")
+    public Memo getContent(@PathVariable Long id) {
+        return memoRepository.findById(id).orElseThrow(
+                () -> new NullPointerException("ID NOT found!")
+        );
+    }
+
     @PostMapping("/api/memos")
     public Memo createMemo(@RequestBody MemoRequestDto requestDto) {
         Memo memo = new Memo(requestDto);
