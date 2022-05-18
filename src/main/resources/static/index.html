@@ -3,23 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- style.css & my script -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <!-- style.css & my script -->
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
 <div class="board-wrap">
     <div class="board-title">
         <h2>Board annoymous</h2>
+    </div>
+
+    <div class="write-area">
+        <textarea class="field" placeholder="Enter any words" id="contents" cols="30" rows="10"></textarea>
     </div>
 
     <div class="board-list-wrap">
@@ -29,30 +34,31 @@
                 <div class="title">Title</div>
                 <div class="writer">Writer</div>
                 <div class="date">Date</div>
-                <div class="count">View</div>
+<!--                <div class="count">View</div>-->
             </div>
-            <div>
-                <div class="num">1</div>
-                <div class="title"><a href="view.html">title</a></div>
-                <div class="writer">Writer</div>
-                <div class="date">Date</div>
-                <div class="count">View</div>
+            <div class="contents">
+                <div id="1-headline" class="headline">
+                    <div class="num">1</div>
+                    <div class="title"><a href="view.html">title</a></div>
+                    <div class="writer">Writer</div>
+                    <div class="date">Date</div>
+<!--                    <div class="count">View</div>-->
+                </div>
+                <div id="2-headline" class="headline">
+                    <div class="num">2</div>
+                    <div class="title"><a href="view.html">title</a></div>
+                    <div class="writer">Writer</div>
+                    <div class="date">Date</div>
+<!--                    <div class="count">View</div>-->
+                </div>
+                <div id="3-headline" class="headline">
+                    <div class="num">3</div>
+                    <div class="title"><a href="view.html">title</a></div>
+                    <div class="writer">Writer</div>
+                    <div class="date">Date</div>
+<!--                    <div class="count">View</div>-->
+                </div>
             </div>
-            <div>
-                <div class="num">2</div>
-                <div class="title"><a href="view.html">title</a></div>
-                <div class="writer">Writer</div>
-                <div class="date">Date</div>
-                <div class="count">View</div>
-            </div>
-            <div>
-                <div class="num">3</div>
-                <div class="title"><a href="view.html">title</a></div>
-                <div class="writer">Writer</div>
-                <div class="date">Date</div>
-                <div class="count">View</div>
-            </div>
-
         </div>
         <div class="board-page">
             <a href="#" class="bt first"><<</a>
@@ -67,7 +73,7 @@
         </div>
 
         <div class="btn-wrap">
-            <a href="#" class="on">Post</a>
+            <div class="create-memo" onclick="createPost()">Post</div>
         </div>
 
     </div>
