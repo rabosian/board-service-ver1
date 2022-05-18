@@ -20,7 +20,7 @@
 <body>
 <div class="board-wrap">
     <div class="board-title">
-        <h2>Board annoymous</h2>
+        <a href="/"><h2>Board annoymous</h2></a>
     </div>
 
     <div class="board-list-wrap">
@@ -35,14 +35,16 @@
             <div class="post-list">
                 <div id="1-headline" class="headline">
                     <div id="1-num" class="num">1</div>
-                    <div id="1-title" class="title"><a href="view.html">title1</a></div>
+                    <div id="1-title" class="title" onclick="showContents('${id}')">title1</div>
                     <div id="1-username" class="username">user1</div>
+                    <div id="1-contents" class="contents"></div>
                     <div id="1-date" class="date">date1</div>
                 </div>
                 <div id="2-headline" class="headline">
                     <div id="2-num" class="num">2</div>
-                    <div id="2-title" class="title"><a href="view.html">title2</a></div>
+                    <div id="2-title" class="title" onclick="showContents('${id}')">title2</div>
                     <div id="2-username" class="username">user2</div>
+                    <div id="2-contents" class="contents"></div>
                     <div id="2-date" class="date">date2</div>
                 </div>
             </div>
@@ -65,9 +67,37 @@
             <textarea required id="contents" placeholder="Enter any words" cols="50" rows="10"></textarea>
         </div>
 
+
+        <div class="board-view-wrap">
+            <div class="board-view">
+                <div class="title-details">
+                    This is title
+                </div>
+                <div class="info">
+                    <dl>
+                        <dt>No</dt>
+                        <dd class="num-details">1</dd>
+                    </dl>
+                    <dl>
+                        <dt>Writer</dt>
+                        <dd class="username-details">www</dd>
+                    </dl>
+                    <dl>
+                        <dt>Date</dt>
+                        <dd class="date-details">2022.05.12</dd>
+                    </dl>
+                </div>
+                <div class="contents-details">
+                    bllvjaljdlkjaljlkbja9euqopiuyoaildkhdagagagagag
+                </div>
+            </div>
+        </div>
+
         <div class="btn-wrap">
             <div class="back-button" onclick="backtoHome()">Go Back</div>
-            <div class="create-memo" onclick="createPost()">Post</div>
+            <div class="post-button" onclick="createPost()">Post</div>
+            <div class="edit-button" onclick="editPost('1')">Edit</div>
+            <div class="delete-button" onclick="deletePost('1')">Delete</div>
         </div>
 
     </div>

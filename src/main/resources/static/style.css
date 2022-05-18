@@ -19,7 +19,6 @@ a {
     align-items: center;
     border-top: 2px solid black;
 }
-
 .write-area input {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -30,7 +29,6 @@ a {
     font-size: 15px;
     background-color: #e9ecef;
 }
-
 .write-area input#username {
     margin-top: 0;
     width: 384px;
@@ -60,7 +58,7 @@ a {
     text-align: center;
 }
 
-.btn-wrap .create-memo {
+.btn-wrap .post-button, .edit-button, .delete-button {
     cursor: pointer;
     display: inline-block;
     min-width: 80px;
@@ -73,7 +71,13 @@ a {
     color: #fff;
 }
 
-.btn-wrap .back-button{
+.btn-wrap .delete-button {
+    margin-left: 10px;
+    background-color: #c98787;
+}
+
+
+.btn-wrap .back-button {
     cursor: pointer;
     display: inline-block;
     min-width: 80px;
@@ -121,7 +125,7 @@ a {
 }
 
 .board-list .post-list .title {
-    text-align: center;
+    cursor: pointer;
 }
 
 .board-list .num {
@@ -176,7 +180,7 @@ a {
     border-top: 2px solid #000;
 }
 
-.board-view .title {
+.board-view .title-details {
     padding: 20px 15px;
     border-bottom: 1px dashed #ddd;
     font-size: 2rem;
@@ -195,4 +199,52 @@ a {
 
 .post-list .date {
     font-size: 1rem;
+}
+
+.board-view {
+    width: 100%;
+    border-top: 2px solid #000;
+}
+
+
+.board-view .info {
+    padding: 15px;
+    border-bottom: 1px dashed #ddd;
+    font-size: 0;
+}
+.board-view .info dl {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+.board-view .info dl::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 0;
+    width: 1px;
+    height: 13px;
+    background-color: #ddd;
+}
+.board-view .info dl:first-child:before {
+    display: none;
+}
+.board-view .info dl:first-child {
+    padding-left: 0;
+}
+.board-view .info dl dt {
+    display: inline-block;
+    font-size: 0.8rem;
+}
+.board-view .info dl dd {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.board-view .contents-details {
+    padding: 15px;
+    border-bottom: 1px solid black;
+    line-height: 160%;
+    font-size: 1.2rem;
 }
