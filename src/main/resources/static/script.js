@@ -1,10 +1,12 @@
 $(document).ready(function () {
     getMemos();
+    $('.write-area').hide();
+    $('.back-button').hide();
 })
 
 // GET API repo.findAll
 function getMemos() {
-    $('#contents').empty();
+    $('.post-list').empty();
 
     $.ajax({
         type: 'GET',
@@ -24,19 +26,45 @@ function getMemos() {
 
 function addHTML(id, username, title, modifiedAt) {
     let tempHtml = `<div id="${id}-headline" class="headline">
-                        <div class="num">${id}</div>
-                        <div class="title"><a href="view.html">${title}</a></div>
-                        <div class="writer">${username}</div>
-                        <div class="date">${modifiedAt}</div>
-                        <div class="count">View</div>
+                        <div id="${id}-num" class="num">${id}</div>
+                        <div id="${id}-title" class="title"><a href="view.html">${title}</a></div>
+                        <div id="${id}-username" class="username">${username}</div>
+                        <div id="${id}-date" class="date">${modifiedAt}</div>
                     </div>`
-    $("#contents").append(tempHtml);
+    $(".post-list").append(tempHtml);
 }
 
 // POST API
 function createPost() {
-    $('.board-list-wrap').empty()
-    $('.board-list').hide()
-    $('.board-page').hide()
+    if ($('.write-area').is(":visible")) {
+        let title = $('#title').val();
+        let username = $('#username').val();
+        let contents = $('#contents').val();
+        let data = {'title': title, 'username': username, 'contents': contents}
 
+        $.ajax({
+            type: "POST",
+            url: "/api/memos",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (response) {
+                alert(`Post success!`)
+                window.location.reload()
+            }
+        })
+    }
+    else {
+        $('.write-area').show()
+        $('.board-list').hide()
+        $('.board-page').hide()
+        $('.back-button').show()
+    }
+
+}
+
+function backtoHome() {
+    $('.write-area').hide()
+    $('.board-list').show()
+    $('.board-page').show()
+    $('.back-button').hide();
 }

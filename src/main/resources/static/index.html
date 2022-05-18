@@ -23,40 +23,27 @@
         <h2>Board annoymous</h2>
     </div>
 
-    <div class="write-area">
-        <textarea class="field" placeholder="Enter any words" id="contents" cols="30" rows="10"></textarea>
-    </div>
-
     <div class="board-list-wrap">
         <div class="board-list">
             <div class="top">
                 <div class="num">No.</div>
                 <div class="title">Title</div>
-                <div class="writer">Writer</div>
+                <div class="username">Username</div>
                 <div class="date">Date</div>
-<!--                <div class="count">View</div>-->
+                <!--                <div class="count">View</div>-->
             </div>
-            <div class="contents">
+            <div class="post-list">
                 <div id="1-headline" class="headline">
-                    <div class="num">1</div>
-                    <div class="title"><a href="view.html">title</a></div>
-                    <div class="writer">Writer</div>
-                    <div class="date">Date</div>
-<!--                    <div class="count">View</div>-->
+                    <div id="1-num" class="num">1</div>
+                    <div id="1-title" class="title"><a href="view.html">title1</a></div>
+                    <div id="1-username" class="username">user1</div>
+                    <div id="1-date" class="date">date1</div>
                 </div>
                 <div id="2-headline" class="headline">
-                    <div class="num">2</div>
-                    <div class="title"><a href="view.html">title</a></div>
-                    <div class="writer">Writer</div>
-                    <div class="date">Date</div>
-<!--                    <div class="count">View</div>-->
-                </div>
-                <div id="3-headline" class="headline">
-                    <div class="num">3</div>
-                    <div class="title"><a href="view.html">title</a></div>
-                    <div class="writer">Writer</div>
-                    <div class="date">Date</div>
-<!--                    <div class="count">View</div>-->
+                    <div id="2-num" class="num">2</div>
+                    <div id="2-title" class="title"><a href="view.html">title2</a></div>
+                    <div id="2-username" class="username">user2</div>
+                    <div id="2-date" class="date">date2</div>
                 </div>
             </div>
         </div>
@@ -72,7 +59,14 @@
             <a href="#" class="bt last">>></a>
         </div>
 
+        <div class="write-area">
+            <input required type="text" id="title" maxlength="30" placeholder="Enter title" />
+            <input required type="text" id="username" maxlength="15" placeholder="Enter username" />
+            <textarea required id="contents" placeholder="Enter any words" cols="50" rows="10"></textarea>
+        </div>
+
         <div class="btn-wrap">
+            <div class="back-button" onclick="backtoHome()">Go Back</div>
             <div class="create-memo" onclick="createPost()">Post</div>
         </div>
 
