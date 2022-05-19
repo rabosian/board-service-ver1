@@ -1,3 +1,5 @@
+let target;
+
 $(document).ready(function () {
     getMemos();
     $('.write-area').hide();
@@ -92,6 +94,7 @@ function showContents(id) {
         type: "GET",
         url: `/memos/${id}`,
         success: function(res) {
+            target = res
             $('.title-details').text(res.title)
             $('.contents-details').text(res.contents)
             $('.num-details').text(res.id)
@@ -104,7 +107,33 @@ function showContents(id) {
 
 // PUT API
 function editPost(id) {
+    if ($('.write-area').is(":visible")) {
+        let title = $('#title').val()
+        let username = $('#username').val()
+        let contents = $('#contents').val()
+        let data = {'title': title, 'username': username, 'contents': contents}
 
+        $.ajax({
+            type: "PUT",
+            url: `/api/memos/${id}`,
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (response) {
+                alert(`Edit success!`)
+                window.location.reload()
+            }
+        })
+    } else {
+        $('.board-view-wrap').hide()
+        $('.delete-button').hide()
+
+        $('.write-area').show()
+        $('.back-button').show()
+
+        $('#title').val(target.title)
+        $('#username').val(target.username)
+        $('#contents').val(target.contents)
+    }
 }
 
 // DELETE API
