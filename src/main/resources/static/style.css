@@ -3,11 +3,9 @@ body {
     font-family: 'Roboto Mono', monospace;
     background-color: #6868ab;
 }
-
 ul, li {
     list-style: none;
 }
-
 a {
     text-decoration: none;
     color: inherit;
